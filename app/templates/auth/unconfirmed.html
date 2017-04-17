@@ -1,0 +1,23 @@
+{% extends "user.html" %}
+{% block title %}
+Alicy
+{% endblock %}
+{% block content %}
+<div class = 'container'>
+	{% for message in get_flashed_messages() %}
+		<div class = 'alert alert-warning'>
+			<button type = 'button' class = 'close' data-dismiss = 'alert'>&times;</button>
+			{{ message }}
+		</div>
+	{% endfor %}
+</div>
+<h1>
+你好, 
+{% if current_user.is_authenticated %}
+	{{ current_user.username }}
+	<p>你还未激活账户,重发点击这里：</p><a href = "{{ url_for('auth.resend_confirmation') }}">重新发送</a>
+{% else %}
+	游客
+{% endif %}
+</h1>
+{% endblock %}

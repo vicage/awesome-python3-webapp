@@ -1,0 +1,22 @@
+{% extends "user.html" %}
+{% block title %}
+Alicy
+{% endblock %}
+{% block content %}
+<div class = 'container'>
+	{% for message in get_flashed_messages() %}
+		<div class = 'alert alert-warning'>
+			<button type = 'button' class = 'close' data-dismiss = 'alert'>&times;</button>
+			{{ message }}
+		</div>
+	{% endfor %}
+</div>
+<h1>
+Hello, 
+{% if current_user.is_authenticated %}
+	{{ current_user.username }}
+{% else %}
+	Stranger
+{% endif %}
+</h1>
+{% endblock %}

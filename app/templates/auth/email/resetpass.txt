@@ -1,0 +1,4 @@
+dear {{ user.username }}
+the alicy team
+pleae click on the following link to reset your password:
+{{ url_for('auth.resetpass', token = token, email = email, _external=True) }}

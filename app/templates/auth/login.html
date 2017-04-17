@@ -1,0 +1,27 @@
+{% extends "user.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Alicy - Login{% endblock %}
+{% block content %}
+<div class = "page-header">
+	<h1>登录</h1>
+</div>
+<div class = 'container'>
+	{% for message in get_flashed_messages() %}
+		<div class = 'alert alert-warning'>
+			<button type = 'button' class = 'close' data-dismiss = 'alert'>&times;</button>
+			{{ message }}
+		</div>
+	{% endfor %}
+</div>
+<div class = "col-md-4">
+	{{ wtf.quick_form(form) }}
+	<p>
+		新用户？
+		<a href = "{{ url_for('auth.register') }}">点此注册</a>
+	</p>
+	<p>
+		忘记密码？
+		<a href = "{{ url_for('auth.resetpass_email') }}">找回密码</a>
+	</p>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>
+Index
+</title>
+</head>
+<body>
+{% macro render_element(mylist) %}
+{% for element in mylist %}
+<h1>your brower is {{ element }}</h1>
+{% endfor %}
+{% endmacro %}
+{% if list %}
+{{ render_element(list) }}
+{% else %}
+<h1>your brower is nothing~!!</h1>
+{% endif %}
+</body>
+</html>

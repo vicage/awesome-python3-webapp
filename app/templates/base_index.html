@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>
+{% block title %}
+luise
+{% endblock %}
+</title>
+</head>
+<body>
+<a href = {{ url_for('static', filename = 'images/img1.jpg') }}>pic1</a>
+<a href = {{ url_for('static', filename = 'images/img2.jpg') }}>pic2</a>
+<a href = {{ url_for('static', filename = 'images/img3.jpg') }}>pic3</a>
+{% block body %}
+<h1>hello, root~!!!</h1>
+{% endblock %}
+</body>
+</html>

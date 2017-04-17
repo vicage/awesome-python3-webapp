@@ -1,0 +1,4 @@
+dear {{ user.username }}
+the alicy team
+pleae click on the following link to change your email:
+{{ url_for('auth.changeemail', token = token, _external=True) }}
