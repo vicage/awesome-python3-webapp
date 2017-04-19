@@ -25,7 +25,7 @@
 			{{ user.name }}
 		{% endif %}
 		{% if user.location %}
-			From <a href = "http://maps.google.com/?q={{ user.location }}">
+			From <a href = "http://map.baidu.com/?l=&s=s%26wd%3D{{ user.location }}">
 				{{ user.location }}
 			</a>
 		{% endif %}
